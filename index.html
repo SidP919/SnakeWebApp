@@ -10,27 +10,39 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" 
         integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
     <title>Snake Game</title>
-
     <style>
         canvas{
             border:2px solid lightgreen;
-            background-color: black;
+            background-color: rgb(6, 49, 0);
         }
-
     </style>
 </head>
 <body class="p-0 m-0 bg-primary">
     <div class="text-center align-middle">
-        <div class="text-center align-middle p-2">
-            <canvas id="canvas" height="320px" width="600px"></canvas>
+        <h1 class="text-white">Snake Game</h1>
+        <div class="text-center align-middle p-1">
+            <canvas id="canvas" height="360px" width="360px"></canvas>
         </div>
         <div class="container bg-primary p-2">
-            <div class="m-1 text-center" onclick="upDirection()"><button class="p-3">Move UP</button></div>
+            <h3 class="text-white">Switch Mode/Level:</h3>
             <div class="m-1 text-center">
-                <button class="p-3" onclick="leftDirection()">Move LEFT</button>
-                <button class="p-3" onclick="rightDirection()">Move RIGHT</button>
+                <button class="p-1 px-2 rounded-3" onclick="switchToHard()">Hard</button>
+                <button class="p-1 px-2 rounded-3" onclick="switchToMedium()">Medium</button>
+                <button class="p-1 px-2 rounded-3" onclick="switchToEasy()">Easy</button>
+                <button class="p-1 px-2 rounded-3" onclick="pauseGame()">Pause</button>
+            </div>   
+        </div>
+        <div class="container bg-primary p-2">
+            <div class="m-1 text-center">
+                <button class="p-2 rounded-3" onclick="upDirection()">Move UP</button>
             </div>
-            <div class="m-1 text-center"><button class="p-3" onclick="downDirection()">Move DOWN</button></div>    
+            <div class="m-1 text-center">
+                <button class="p-2 rounded-3" onclick="leftDirection()">Move LEFT</button>
+                <button class="p-2 rounded-3" onclick="rightDirection()">Move RIGHT</button>
+            </div>
+            <div class="m-1 text-center">
+                <button class="p-2 rounded-3" onclick="downDirection()">Move DOWN</button>
+            </div>
         </div>
     </div>
 

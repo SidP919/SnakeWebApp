@@ -2,11 +2,13 @@ const canvas = document.getElementById('canvas');
 const pen = canvas.getContext('2d');
 pen.fillStyle = 'yellow';
 
-const cs = 37;//25;
-const W = 600;//500; 
-const H = 320;//300;//735
+const cs = 15;//25;
+const W = 360;//500; 
+const H = 360;//300;//735
 let food = null;
 let score = 0;
+
+let snakeSpeed = 180;
 
 const snake = {
     //initial length of Snake
@@ -147,7 +149,6 @@ function init(){
     pen.fillText(`Score ${score}`, 50, 50);
 
     function changeDirection(e){
-        console.log("A Key Pressed!");
         if(e.which === 13){
             console.log('Enter Pressed!');
             snake.direction = ""
@@ -168,13 +169,12 @@ function init(){
             console.log('Left Pressed!');
             snake.direction = 'LEFT';
         }
-
-        console.log(snake.direction);
     }
 
     document.addEventListener('keydown',changeDirection);
 }
 
+//Screen Buttons for Mobile users
 function upDirection(){
     snake.direction = "UP";
 }
@@ -191,12 +191,37 @@ function leftDirection(){
     snake.direction = "LEFT";
 }
 
+//change Mode
+function switchToHard(){
+    snakeSpeed = 80;
+    clearInterval(id);
+    id = setInterval(gameLoop, snakeSpeed);
+    console.log(snakeSpeed);
+}
+function switchToMedium(){
+    snakeSpeed = 180;
+    clearInterval(id);
+    id = setInterval(gameLoop, snakeSpeed);
+    console.log(snakeSpeed);
+}
+function switchToEasy(){
+    snakeSpeed = 360;
+    clearInterval(id);
+    id = setInterval(gameLoop, snakeSpeed);
+    console.log(snakeSpeed);
+}
+
+function pauseGame(){
+    console.log('Pause Pressed!');
+    snake.direction = "";
+}
+
 //draw
 function draw(){
     pen.clearRect(0,0,W,H);
     pen.font = '40px sans-serif';
     pen.fillText(`Score ${score}`, 50, 50);
-    pen.fillStyle = 'blue';
+    pen.fillStyle = 'lightgreen';
     pen.fillRect(food.x * cs, food.y * cs, cs-5, cs-5);
     pen.fillStyle = 'rgba(255, 238, 0, 0.651)';
     snake.drawSnake();
@@ -231,4 +256,4 @@ function gameLoop(){
 //Calling the init function to initialize the Snake Game.
 init();
 
-const id = setInterval(gameLoop, 100);
+let id = setInterval(gameLoop, snakeSpeed);

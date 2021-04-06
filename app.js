@@ -1,3 +1,8 @@
+const hardBtn = document.getElementById('hardBtn');
+const mediumBtn = document.getElementById('mediumBtn');
+const easyBtn = document.getElementById('easyBtn');
+
+
 const canvas = document.getElementById('canvas');
 const pen = canvas.getContext('2d');
 pen.fillStyle = 'yellow';
@@ -60,7 +65,11 @@ const snake = {
             if (nextY * cs >= H) {
                 clearInterval(id);
                 pen.fillStyle = 'lightgreen';
-                pen.fillText('Game Over', 50, 100);
+                pen.fillText('Game Over.', 50, 100);
+                pen.fillText('Please Reload.', 50, 160);
+                hardBtn.disabled = true;
+                mediumBtn.disabled = true;
+                easyBtn.disabled = true;
             }
 
             //Removing the first cell
@@ -82,7 +91,11 @@ const snake = {
             if (nextX * cs < 0) {
                 clearInterval(id);
                 pen.fillStyle = 'lightgreen';
-                pen.fillText('Game Over', 50, 100);
+                pen.fillText('Game Over.', 50, 100);
+                pen.fillText('Please Reload.', 50, 160);
+                hardBtn.disabled = true;
+                mediumBtn.disabled = true;
+                easyBtn.disabled = true;
             }
             
             //Removing the first cell
@@ -104,7 +117,11 @@ const snake = {
             if (nextY * cs < 0) {
                 clearInterval(id);
                 pen.fillStyle = 'lightgreen';
-                pen.fillText('Game Over', 50, 100);
+                pen.fillText('Game Over.', 50, 100);
+                pen.fillText('Please Reload.', 50, 160);
+                hardBtn.disabled = true;
+                mediumBtn.disabled = true;
+                easyBtn.disabled = true;
             }
             
             //Removing the first cell
@@ -126,7 +143,11 @@ const snake = {
             if (nextX * cs >= W) {
                 clearInterval(id);
                 pen.fillStyle = 'lightgreen';
-                pen.fillText('Game Over', 50, 100);
+                pen.fillText('Game Over.', 50, 100);
+                pen.fillText('Please Reload.', 50, 160);
+                hardBtn.disabled = true;
+                mediumBtn.disabled = true;
+                easyBtn.disabled = true;
             }
 
             //Removing the first cell

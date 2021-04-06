@@ -5,11 +5,11 @@ const easyBtn = document.getElementById('easyBtn');
 
 const canvas = document.getElementById('canvas');
 const pen = canvas.getContext('2d');
-pen.fillStyle = 'yellow';
+pen.fillStyle = 'red';
 
 const cs = 15;//25;
-const W = 360;//500; 
-const H = 360;//300;//735
+const W = 336;//500; 
+const H = 368;//300;//735
 let food = null;
 let score = 0;
 
@@ -244,7 +244,7 @@ function draw(){
     pen.fillText(`Score ${score}`, 50, 50);
     pen.fillStyle = 'lightgreen';
     pen.fillRect(food.x * cs, food.y * cs, cs-5, cs-5);
-    pen.fillStyle = 'rgba(255, 238, 0, 0.651)';
+    pen.fillStyle = 'rgba(255, 0, 0, 0.692)';
     snake.drawSnake();
 }
 

@@ -19,29 +19,29 @@
 </head>
 <body class="p-0 m-0 bg-primary">
     <div class="text-center align-middle">
-        <h1 class="text-white">Snake Game</h1>
+        <h2 class="text-white p-0 m-0">Snake Game</h2>
         <div class="text-center align-middle p-1">
-            <canvas id="canvas" height="360px" width="360px"></canvas>
+            <canvas id="canvas" height="368px" width="336px"></canvas>
         </div>
-        <div class="container bg-primary p-2">
-            <h3 class="text-white">Switch Mode/Level:</h3>
-            <div class="m-1 text-center">
+        <div class="container bg-primary">
+            <h5 class="text-white">Switch Mode/Level:</h5>
+            <div class="text-center">
                 <button id="hardBtn" class="p-1 px-2 rounded-3" onclick="switchToHard()">Hard</button>
                 <button id="mediumBtn" class="p-1 px-2 rounded-3" onclick="switchToMedium()">Medium</button>
                 <button id="easyBtn" class="p-1 px-2 rounded-3" onclick="switchToEasy()">Easy</button>
-                <button class="p-1 px-2 rounded-3" onclick="pauseGame()">Pause</button>
             </div>   
         </div>
-        <div class="container bg-primary p-2">
-            <div class="m-1 text-center">
-                <button class="p-2 rounded-3" onclick="upDirection()">Move UP</button>
+        <div class="container bg-primary p-1">
+            <div class="text-center">
+                <button class="py-2 px-5 rounded-3" onclick="upDirection()">Move UP</button>
+            </div>
+            <div class="my-2 text-center">
+                <button class="py-2 px-3 mx-1 rounded-3" onclick="leftDirection()">Move LEFT</button>
+                <button class="py-2 px-2 mx-1 rounded-3" onclick="pauseGame()">Pause</button>
+                <button class="py-2 px-3 mx-1 rounded-3" onclick="rightDirection()">Move RIGHT</button>
             </div>
             <div class="m-1 text-center">
-                <button class="p-2 rounded-3" onclick="leftDirection()">Move LEFT</button>
-                <button class="p-2 rounded-3" onclick="rightDirection()">Move RIGHT</button>
-            </div>
-            <div class="m-1 text-center">
-                <button class="p-2 rounded-3" onclick="downDirection()">Move DOWN</button>
+                <button class="py-2 px-5 rounded-3" onclick="downDirection()">Move DOWN</button>
             </div>
         </div>
     </div>
